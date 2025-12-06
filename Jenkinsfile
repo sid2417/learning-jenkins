@@ -1,13 +1,17 @@
 pipeline {
-    agent any
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 15, unit: 'SECONDS')
+    agent {
+        label 'AGENT-1'
     }
+    // options {
+    //     // Timeout counter starts AFTER agent is allocated
+    //     timeout(time: 15, unit: 'SECONDS')
+    //     disableConcurrentBuilds()
+    // }
     stages {
         stage('Build') {
             steps {
                 sh 'echo this is new build'
+                sh 'THis is running from AGENT-1'
             }
         }
         stage('Test') {
