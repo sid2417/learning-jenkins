@@ -13,6 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo this is new test'
+                sleep(10)
             }
         }
         stage('Deploy') {
