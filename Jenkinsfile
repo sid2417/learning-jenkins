@@ -11,11 +11,15 @@ pipeline {
 
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 
-        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-        
-        
-        
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')   
     }
+
+    environment { 
+        DEPLOY_TO = 'production'
+        WORKING_WITH = 'agent1'
+
+    }
+
     options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 30, unit: 'MINUTES')
@@ -27,6 +31,7 @@ pipeline {
             steps {
                 sh 'echo Hi,how r u AGENT-1'
                 sh 'echo today we have deployment'
+                sh 'env'
                                                 
             }
         }
