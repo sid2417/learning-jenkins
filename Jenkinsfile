@@ -27,4 +27,19 @@ pipeline {
             }
         }
     }
+
+    post { 
+        always { 
+            echo 'This message will always say Hello again!'
+        }
+        aborted { 
+            echo 'The stage is aborted'
+        }
+        failure { 
+            echo 'The stage is failure'
+        }
+        success { 
+            echo 'The stage is success'
+        }
+    }
 }
