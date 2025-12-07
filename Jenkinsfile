@@ -3,7 +3,8 @@ pipeline {
         label 'AGENT-1'
     }
     parameters {
-        string(name: 'AGENT1', defaultValue: '8080', description: 'Iam a agent-1 working under master')
+        string(name: 'AGENT1', defaultValue: 'ec2-user', description: 'Iam a agent-1 working under master')
+        string(name: 'Kithu', defaultValue: 'Kerala', description: 'special person')
         
     }
     options {
@@ -18,6 +19,7 @@ pipeline {
                 sh 'echo Hi,how r u AGENT-1'
                 sh 'echo today we have deployment'
                 echo "Hello ${params.AGENT1}"
+                echo "Hello ${params.Kithu}"
                 
             }
         }
