@@ -17,9 +17,8 @@ pipeline {
             steps {
                 sh 'echo Hi,how r u AGENT-1'
                 sh 'echo today we have deployment'
-                echo "This is just echo line chekcing"
                 echo "Hello ${params.AGENT1}"
-                //echo "Hello ${params.kithu123}"
+                
             }
         }
         stage('Test') {
