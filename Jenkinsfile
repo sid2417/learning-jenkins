@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo Hi, this is todays build, from AGENT-1'
-                sh 'echo this is running from AGENT-1'
+                sh 'echo Hi,how r u AGENT-1'
+                sh 'echo today we have deployment'
             }
         }
         stage('Test') {
