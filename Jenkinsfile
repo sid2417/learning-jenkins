@@ -5,8 +5,8 @@ pipeline {
     options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 1, unit: 'SECONDS')
-        disableConcurrentBuilds()
-        ansiColor('xterm')
+        // disableConcurrentBuilds()
+        // ansiColor('xterm')
     }
     stages {
         stage('Build') {
