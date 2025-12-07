@@ -52,6 +52,8 @@ pipeline {
                 echo "Choice: ${params.CHOICE}"
 
                 echo "Password: ${params.PASSWORD}"
+                echo "This code is build while you push in github automatically using webhook"
+
             }
         }
     }

@@ -13,6 +13,9 @@
 
 ### webhook setting
 - These setting in github repo
-- Payload URL : https://3.239.1.2:8080/github-webhook/  ( / ending slash is mandatory)
+- Payload URL : https://3.239.1.2:8080/github-webhook/  
+- ( / ending slash is mandatory)
+- if you select Enable SSL verification : https://3.239.1.2:8080/github-webhook/
+- if you Disable SSL verification : http://3.239.1.2:8080/github-webhook/
 - Content type * : application/json
 - Which events would you like to trigger this webhook? : Pushes
