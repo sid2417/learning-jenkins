@@ -3,8 +3,16 @@ pipeline {
         label 'AGENT-1'
     }
     parameters {
-        string(name: 'AGENT1', defaultValue: 'ec2-user', description: 'Iam a agent-1 working under master')
-        string(name: 'KITHU', defaultValue: 'Kerala', description: 'special person')
+        string(name: 'KITHU', defaultValue: 'Miss SiD', description: 'Hi this is Kith, say hi to Sid')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+        
         
         
     }
@@ -20,8 +28,7 @@ pipeline {
                 sh 'echo Hi,how r u AGENT-1'
                 sh 'echo today we have deployment'
                 echo "Hello ${params.AGENT1}"
-                echo "Hi, this is sid, how r u kith ${params.KITHU}"
-                
+                                
             }
         }
         stage('Test') {
@@ -33,6 +40,19 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'echo Hi, this is todays Deploy, from AGENT-1'
+            }
+        }
+        stage('Params') {
+            steps {
+                echo "Hello ${params.KITHU}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
             }
         }
     }
