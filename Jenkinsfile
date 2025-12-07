@@ -3,14 +3,14 @@ pipeline {
         label 'AGENT-1'
     }
     parameters {
-        string(name: 'AGENT-1', defaultValue: '8080', description: 'Iam a agent-1 working under master')
-        password(name: 'kithu123', defaultValue: 'SECRET', description: 'Enter a password')
+        string(name: 'AGENT1', defaultValue: '8080', description: 'Iam a agent-1 working under master')
+        //password(name: 'kithu123', defaultValue: 'SECRET', description: 'Enter a password')
     }
     options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 30, unit: 'MINUTES')
-        // disableConcurrentBuilds()
-        // ansiColor('xterm')
+        disableConcurrentBuilds()
+        ansiColor('xterm')
     }
     stages {
         stage('Build') {
@@ -18,8 +18,8 @@ pipeline {
                 sh 'echo Hi,how r u AGENT-1'
                 sh 'echo today we have deployment'
                 echo "This is just echo line chekcing"
-                echo "Hello ${params.AGENT-1}"
-                echo "Hello ${params.kithu123}"
+                echo "Hello ${params.AGENT1}"
+                //echo "Hello ${params.kithu123}"
             }
         }
         stage('Test') {
