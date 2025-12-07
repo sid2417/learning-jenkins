@@ -4,7 +4,7 @@ pipeline {
     }
     parameters {
         string(name: 'AGENT1', defaultValue: '8080', description: 'Iam a agent-1 working under master')
-        //password(name: 'kithu123', defaultValue: 'SECRET', description: 'Enter a password')
+        
     }
     options {
         // Timeout counter starts AFTER agent is allocated
