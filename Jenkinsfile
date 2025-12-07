@@ -3,7 +3,7 @@ pipeline {
         label 'AGENT-1'
     }
     parameters {
-        string(name: 'KITHU', defaultValue: 'Miss SiD', description: 'Hi this is Kith, say hi to Sid')
+        string(name: 'AGENT1', defaultValue: 'ec2-user', description: 'Hi this is agent1, from ec2-user, iam working under master')
 
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 
@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Params') {
             steps {
-                echo "Hello ${params.KITHU}"
+                echo "Hello ${params.AGENT1}"
 
                 echo "Biography: ${params.BIOGRAPHY}"
 

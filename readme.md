@@ -10,3 +10,9 @@
 
 ### ansiColor('xterm') 
 - is a Jenkins Pipeline step used to enable colored console output in the      Jenkins job logs.
+
+### webhook setting
+- These setting in github repo
+- Payload URL : https://3.239.1.2:8080/github-webhook/  ( / ending slash is mandatory)
+- Content type * : application/json
+- Which events would you like to trigger this webhook? : Pushes
